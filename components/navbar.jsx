@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 function Navbar() {
-    var [left, setLeft] = React.useState(0)
     function triggerNav() {
         const navMob = document.getElementById('nav-mob')
         navMob.style.display = "flex"
@@ -12,13 +11,7 @@ function Navbar() {
     }
     function hideNav() {
         const navMob = document.getElementById('nav-mob')
-        if (left === 0) {
-            navMob.style.transform = 'translateX(100%)'
-            setLeft(1)
-        } else {
-            navMob.style.transform = 'translateX(-100%)'
-            setLeft(0)
-        }
+        navMob.style.transform = 'translateX(-100%)'
         setTimeout(() => {
             navMob.style.display = "none"
         }, 500);
